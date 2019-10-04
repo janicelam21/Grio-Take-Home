@@ -1,7 +1,7 @@
 {
   "name": "grio-take-home",
   "version": "1.0.0",
-  "description": "",
+  "description": "Grio take home assessment",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/janicelam21/Grio-Take-Home.git"
   },
-  "author": "",
+  "author": "Janice Lam",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/janicelam21/Grio-Take-Home/issues"
