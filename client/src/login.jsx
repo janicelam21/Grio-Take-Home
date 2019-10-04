@@ -14,15 +14,16 @@ class LogIn extends React.Component {
       nextCount: 0,
       showPopup: false
     }
+
     this.textInput = this.textInput.bind(this);
     this.authenticate = this.authenticate.bind(this);
-    this.incrementCount = this.incrementCount.bind(this)
+    this.incrementCount = this.incrementCount.bind(this);
     this.confirm = this.confirm.bind(this);
-    this.cancel = this.cancel.bind(this)
+    this.cancel = this.cancel.bind(this);
   }
 
   textInput(e, stateKey) {
-    this.setState({[stateKey]: e.target.value})
+    this.setState({[stateKey]: e.target.value});
   }
 
   authenticate(e) {
@@ -33,40 +34,38 @@ class LogIn extends React.Component {
     })
     .then(response => {
       if(response.data.token) {
-        this.setState({redirectTo: true})
-        this.setState({token: response.data.token})
+        this.setState({redirectTo: true});
+        this.setState({token: response.data.token});
       } 
     }) 
     .catch(err => {
-      console.log(err)
+      console.log(err);
     })
   }
 
   incrementCount(e) {
-    e.preventDefault()
-    console.log('here')
+    e.preventDefault();
     axios.post('/calc', {
       count: this.state.count
     },{
       headers: {'Authorization': "bearer " + this.state.token}
     })
     .then(res => {
-      console.log(res.data.nextCount)
-      this.setState({nextCount: res.data.nextCount})
-      this.setState((state) => ({showPopup: !state.showPopup}))
+      this.setState({nextCount: res.data.nextCount});
+      this.setState((state) => ({showPopup: !state.showPopup}));
     })
     .catch(err => {
-      console.log('there was a problem')
+      console.log('there was a problem');
     })
   }
 
   confirm() {
-    this.setState({count: this.state.nextCount})
-    this.setState({showPopup: !this.state.showPopup})
+    this.setState({count: this.state.nextCount});
+    this.setState({showPopup: !this.state.showPopup});
   }
 
   cancel() {
-    this.setState({showPopup: !this.state.showPopup})
+    this.setState({showPopup: !this.state.showPopup});
   }
 
   render() {
@@ -100,4 +99,4 @@ class LogIn extends React.Component {
   }
 }
 
-export default LogIn
+export default LogIn;
