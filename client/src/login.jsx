@@ -44,16 +44,20 @@ class LogIn extends React.Component {
 
   incrementCount(e) {
     e.preventDefault()
+    console.log('here')
     axios.post('/calc', {
       count: this.state.count
     },{
       headers: {'Authorization': "bearer " + this.state.token}
     })
     .then(res => {
+      console.log(res.data.nextCount)
       this.setState({nextCount: res.data.nextCount})
-      this.setState({showPopup: !this.state.showPopup})
+      this.setState((state) => ({showPopup: !state.showPopup}))
     })
-    .catch()
+    .catch(err => {
+      console.log('there was a problem')
+    })
   }
 
   confirm() {
@@ -86,7 +90,7 @@ class LogIn extends React.Component {
         <Homepage count={this.state.count} 
                   nextCount={this.state.nextCount} 
                   incrementCount = {this.incrementCount}
-                  showPopup = {this.showPopup}
+                  showPopup = {this.state.showPopup}
                   confirm = {this.confirm}
                   cancel = {this.cancel}/>
 
