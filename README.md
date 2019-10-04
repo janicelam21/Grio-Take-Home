@@ -1,7 +1,6 @@
 # Grio-Take-Home
 
 ## Grio Take Home Instructions
-===============================
 
 1. If User is not logged in, User can enter username and password --> If correct, will take user to home page
 2. Once User is looking at home page, home page has "Count 0" label centered vertically and horizontally on page, with a button increment to the right of the label
@@ -11,12 +10,10 @@
 6. If the confirm button is clicked, then the popup is closed, and the user sees the next count on the home page
 
 ## Tech Stack
-==============
 * Frontend: Javascript, React, Webpack
 * Backend: Node.js, Express
 
 ## Usage
-========
 # clone this repository
 git clone https://github.com/janicelam21/Grio-Take-Home.git
 
