@@ -8,14 +8,14 @@ const jwt = require('jsonwebtoken');
 app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(bodyParser.json());
 
-
+// fake user to use for auth token
 const fakeUser = {
   username: 'user',
   password: 'pw'
 }
 
 // to get a token upon login
-app.post('/authenticate',(req,res) => {
+app.post('/authenticate',(req, res) => {
   if (req.body.username === fakeUser.username && req.body.password === fakeUser.password) {
     const token = jwt.sign({username: req.body.username},'dog');
     res.json({token: token});
@@ -25,7 +25,7 @@ app.post('/authenticate',(req,res) => {
 })
 
 // get token from header in req
-const ensureToken = (req,res,next) => {
+const ensureToken = (req, res, next) => {
   const bearerHeader = req.headers["authorization"];
   if (typeof bearerHeader !== 'undefined') {
     const bearer = bearerHeader.split(' ');
@@ -38,7 +38,7 @@ const ensureToken = (req,res,next) => {
 }
 
 // allow if token is verified
-app.post('/calc', ensureToken, (req,res) => {
+app.post('/calc', ensureToken, (req, res) => {
   var currCount = req.body.count;
   jwt.verify(req.token,'dog', (err,data) => {
     if (err) {

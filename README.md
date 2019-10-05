@@ -27,3 +27,7 @@ npm run react-dev
 
 * run app
 npm start
+
+* use the following username and password to access homepage
+username: user 
+password: pw
