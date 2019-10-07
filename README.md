@@ -16,18 +16,18 @@
 
 
 ## Usage
-* clone this repository . 
+* clone this repository  
 git clone https://github.com/janicelam21/Grio-Take-Home.git
 
 * install dependencies
 npm install 
 
-* build webpack bundle . 
+* build webpack bundle  
 npm run react-dev
 
-* run app . 
+* run app  
 npm start
 
-* use the following username and password to access homepage . 
+* use the following username and password to access homepage  
 username: user  
 password: pw  
