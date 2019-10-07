@@ -19,7 +19,7 @@
 * clone this repository  
 git clone https://github.com/janicelam21/Grio-Take-Home.git
 
-* install dependencies
+* install dependencies  
 npm install 
 
 * build webpack bundle  
